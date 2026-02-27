@@ -10,8 +10,9 @@ TOKEN = os.getenv("BOT_TOKEN")
 async def calculate(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         x = float(update.message.text)
-        result = ((x * 1.05) + 4000) * 1.6
-        await update.message.reply_text(f"Ամբողջական արժեք: {result}")
+        result = int(((x * 1.05) + 4000) * 1.6)
+        result_1 = int(result * 0.8)
+        await update.message.reply_text(f"Ամբողջական արժեք: {result} || {result_1} -20%")
     except:
         await update.message.reply_text("Խնդրում եմ մուտագրել միայն թվեր")
 
