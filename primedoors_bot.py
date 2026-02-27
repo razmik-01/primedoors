@@ -1,7 +1,11 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters
 
-TOKEN = "7895178842:AAEKH25qO9xc0y5y1e0_ZmH0uVMr-x9-VaE"
+import os
+
+TOKEN = os.getenv("BOT_TOKEN")
+
+# TOKEN = "7895178842:AAEKH25qO9xc0y5y1e0_ZmH0uVMr-x9-VaE"
 
 async def calculate(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
